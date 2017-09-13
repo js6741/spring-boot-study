@@ -1,5 +1,7 @@
 package com.skcc.springboot.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(path = "/test")
 public class TestController {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     private TestService testService;
 
     public TestController(TestService testService) {
@@ -22,6 +26,9 @@ public class TestController {
     @RequestMapping(path = "/string", method = RequestMethod.GET)
     @ResponseBody
     public String getString() {
-        return testService.getString();
+        String result = testService.getString();
+        logger.debug("debug: {}", result);
+        logger.info("info: {}", result);
+        return result;
     }
 }
