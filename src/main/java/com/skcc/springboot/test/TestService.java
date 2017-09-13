@@ -1,5 +1,6 @@
 package com.skcc.springboot.test;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,7 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class TestService {
 
+    @Value("${test.string:Default String}")
+    private String string;
+
     public String getString() {
-        return "String";
+        return string;
     }
 }
