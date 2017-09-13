@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(path = "/test")
 public class TestController {
 
-    private TestService testService1;
+    private TestService testService;
 
-    public TestController(TestService testService1) {
-        this.testService1 = testService1;
+    public TestController(TestService testService) {
+        this.testService = testService;
     }
 
     @RequestMapping(path = "/string", method = RequestMethod.GET)
     @ResponseBody
     public String getString() {
-        return testService1.getString();
+        return testService.getString();
     }
 }

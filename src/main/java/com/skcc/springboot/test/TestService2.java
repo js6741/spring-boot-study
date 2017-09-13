@@ -1,5 +1,6 @@
 package com.skcc.springboot.test;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
  * @since 1.0
  */
 @Service
+@Profile("s2")
 public class TestService2 implements TestService {
 
     @Override
