@@ -1,12 +1,15 @@
 package com.skcc.springboot.test;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author HyunSub Shim
  * @since 1.0
  */
-@Component
+@Controller
+@RequestMapping(path = "/test")
 public class TestController {
 
     private TestService testService;
@@ -15,6 +18,7 @@ public class TestController {
         this.testService = testService;
     }
 
+    @RequestMapping(path = "/string", method = RequestMethod.GET)
     public String getString() {
         return testService.getString();
     }

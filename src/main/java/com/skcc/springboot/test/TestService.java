@@ -1,12 +1,12 @@
 package com.skcc.springboot.test;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * @author HyunSub Shim
  * @since 1.0
  */
-@Component
+@Service
 public class TestService {
 
     public String getString() {
