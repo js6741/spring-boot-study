@@ -19,9 +19,14 @@ public class TestService1Test {
     @Autowired
     private TestService1 testService1;
 
-	@Test
-	public void contextLoads() {
-	    assertThat(testService1.getString(), is("some string"));
-	}
+    @Test
+    public void test1() {
+        assertThat(testService1.getString(), is("Test String from Properties file"));
+    }
+
+    @Test(expected = AssertionError.class)
+    public void test2() {
+        assertThat(testService1.getString(), is("some string"));
+    }
 
 }
