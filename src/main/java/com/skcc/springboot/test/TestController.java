@@ -31,4 +31,10 @@ public class TestController {
         logger.info("info: {}", result);
         return result;
     }
+
+    @RequestMapping(path = "/error", method = RequestMethod.GET)
+    @ResponseBody
+    public String error() {
+        throw new RuntimeException("Intentionally thrown");
+    }
 }
